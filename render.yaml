@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: amv-livraplus-api
+    env: node
+    region: frankfurt
+    plan: free
+    buildCommand: npm install && npm run seed
+    startCommand: node src/server.js
+    autoDeploy: true
+    envVars:
+      - key: PORT
+        value: 4000
+      - key: JWT_SECRET
+        generateValue: true
+      - key: MPESA_API_KEY
+        value:
+      - key: ORANGE_MONEY_KEY
+        value:
+      - key: AIRTEL_MONEY_KEY
+        value:
+      - key: AFRIMONEY_KEY
+        value:
+      - key: WAVE_KEY
+        value:
